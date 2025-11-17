@@ -1,8 +1,5 @@
-@extends('layout.dashboard')
+<x-dashboard title="Home">
 
-@section('title', 'Home')
-
-@section('content')
     @php
         $name = auth()->user()->name;
         $first = substr($name, 0, 1);
@@ -17,4 +14,4 @@
             </span>
         </h1>
     </div>
-@endsection
+</x-dashboard>

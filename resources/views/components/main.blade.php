@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title>{{ $title ?? '' }}</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -40,12 +40,49 @@
 
     <!-- Page Content -->
     <main class="flex-1">
-        @yield('content')
+        {{-- Flash messages --}}
+        @if (session('success'))
+            <div class="max-w-7xl mx-auto px-4 mt-4">
+                <div class="rounded-md border border-green-700/40 bg-green-900/20 text-green-300 px-4 py-3">
+                    {{ session('success') }}
+                </div>
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="max-w-7xl mx-auto px-4 mt-4">
+                <div class="rounded-md border border-red-700/40 bg-red-900/20 text-red-300 px-4 py-3">
+                    {{ session('error') }}
+                </div>
+            </div>
+        @endif
+
+        @if (session('status'))
+            <div class="max-w-7xl mx-auto px-4 mt-4">
+                <div class="rounded-md border border-green-700/40 bg-green-900/20 text-green-300 px-4 py-3">
+                    {{ session('status') }}
+                </div>
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="max-w-7xl mx-auto px-4 mt-4">
+                <div class="rounded-md border border-red-700/40 bg-red-900/20 text-red-300 px-4 py-3">
+                    <ul class="list-disc list-inside space-y-1">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
+
+        {{ $slot }}
     </main>
 
     <!-- Footer -->
     <footer class="text-center py-6 text-neutral-400 text-sm md:text-base">
-        <p>© {{ date('Y') }} Harpy</p>
+        <p>{{ date('Y') }} Harpy</p>
     </footer>
 
 </body>

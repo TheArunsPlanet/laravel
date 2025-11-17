@@ -1,6 +1,4 @@
-@extends('layout.dashboard')
-
-@section('content')
+<x-dashboard title="Edit Post">
     <div class="max-w-7xl mx-auto py-8 px-4">
         <h1 class="text-3xl font-bold mb-6 text-white">Edit Post</h1>
 
@@ -21,4 +19,4 @@
             <button type="submit" class="bg-[#db0042] text-white px-4 py-2 rounded-lg hover:bg-[#db0042]/80 transition-colors">Update Post</button>
         </form>
     </div>
-@endsection
+</x-dashboard>

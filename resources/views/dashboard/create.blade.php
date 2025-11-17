@@ -1,6 +1,4 @@
-@extends('layout.dashboard')
-
-@section('content')
+<x-dashboard title="Create Post">
 <main class="flex-1 flex items-center justify-center min-h-[calc(100vh-4rem)] bg-black">
     <div class="w-full max-w-lg px-6 py-8 bg-black text-neutral-200 flex flex-col gap-6">
         
@@ -28,4 +26,4 @@
         </form>
     </div>
 </main>
-@endsection
+</x-dashboard>

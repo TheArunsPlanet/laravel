@@ -1,8 +1,4 @@
-@extends('layout.dashboard')
-
-@section('title', 'All Posts')
-
-@section('content')
+<x-dashboard title="All Posts">
     <div class="max-w-7xl mx-auto py-8 px-4">
         <h1 class="text-3xl font-bold mb-6 text-white">All Posts</h1>
 
@@ -29,4 +25,4 @@
             </div>
         @endif
     </div>
-@endsection
+</x-dashboard>

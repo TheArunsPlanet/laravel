@@ -1,9 +1,5 @@
-@extends('layout.main')
-
-@section('title', 'Login')
-
-@section('content')
-<main class="flex-1 flex items-center justify-center min-h-[calc(100vh-4rem)]">
+<x-main title="Login">
+    <main class="flex-1 flex items-center justify-center min-h-[calc(100vh-4rem)]">
     <div class="w-full max-w-md px-6 py-8 bg-black text-neutral-200 flex flex-col gap-6">
         
         <!-- Heading -->
@@ -40,4 +36,4 @@
 
     </div>
 </main>
-@endsection
+</x-main>
